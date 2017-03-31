@@ -23,7 +23,7 @@ while True:
         pages_results=requests.get(pages_results['paging']['next']).json()
         
     except KeyError:
-        # When there are no more pages (['paging']['next']), break from the loop and end the loop.
+        # When there are no more pages (['paging']['next']), break from the loop.
         break
 
 # ---- Getting the pages' information ----
@@ -67,7 +67,7 @@ if len(all_pages_ids)>50:
                         temp=requests.get(temp['paging']['next']).json()
 
                     except KeyError:
-                        # When there are no more pages (['paging']['next']), break from the loop and end the loop.
+                        # When there are no more pages (['paging']['next']), break from the loop.
                         break
         del pages_ids[:50]
 
