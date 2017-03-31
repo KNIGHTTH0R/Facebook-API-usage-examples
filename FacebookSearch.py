@@ -45,10 +45,9 @@ else:
 all_posts=[]
 
 # ---- Getting the pages' posts ID (can be merged with the previous step to limit API calls) ----
-print("oui")
+
 if len(all_pages_ids)>50:
     pages_ids = list(all_pages_ids)
-    print(len(pages_ids))
     
     while pages_ids:
 
@@ -95,7 +94,7 @@ else: #this else part should be tested
 while all_posts:
     post_ = graph.get_objects(ids=all_posts[:50], fields='from,message,link') #put the fields you'd like to get (https://developers.facebook.com/docs/graph-api/reference/post)
     for id in all_posts[:50]:
-        print(post_[id])
+        print(post_[id]) #change that with what you want
     del all_posts[:50]
 
 #full code should be refactored: if len() else can be removed and position of "graph.etc" can be improved i guess
